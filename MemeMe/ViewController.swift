@@ -16,12 +16,12 @@ struct Meme{
 }
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
-    @IBOutlet weak var cameraButton: UIButton!
+    @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
     
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var shareButton: UIButton!
+    @IBOutlet weak var shareButton: UIBarButtonItem!
     
     let memeTextAttributes: [NSAttributedString.Key: Any] = [
         NSAttributedString.Key.strokeColor: UIColor.black,
@@ -122,10 +122,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         return keyboardSize.cgRectValue.height
     }
     
-    func save() {
-        let memedImage = generateMemedImage()
-            // Create the meme
-        let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imageView.image!, memedImage: memedImage)
+    func save(memedImage : UIImage){
+         _ = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imageView.image!, memedImage: memedImage)
     }
     
     func generateMemedImage() -> UIImage {
@@ -142,6 +140,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         navigationController?.setToolbarHidden(false, animated: false)
 
         return memedImage
+    }
+    
+    @IBAction func shareImage(_ sender:Any) {
+        let meme = generateMemedImage()
+        let items = [meme]
+        let activityController = UIActivityViewController(activityItems: items, applicationActivities: nil)
+        activityController.completionWithItemsHandler = { (_, completed, _, _) in
+            if (completed) {
+                self.save(memedImage: meme)
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
+        present(activityController, animated: true)
     }
 
 }
