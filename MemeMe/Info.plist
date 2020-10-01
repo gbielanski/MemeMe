@@ -61,8 +61,10 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>I need it for meme</string>
+	<string>$(PRODUCT_NAME) needs to pick the photo from device library!</string>
 	<key>NSCameraUsageDescription</key>
-	<string>I need it for meme</string>
+	<string>$(PRODUCT_NAME) needs to pick the photo from device camera!</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>$(PRODUCT_NAME) needs to save the photo to device&apos;s photo library!</string>
 </dict>
 </plist>

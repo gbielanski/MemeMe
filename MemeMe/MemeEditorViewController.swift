@@ -124,19 +124,21 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     func generateMemedImage() -> UIImage {
-        navigationController?.setNavigationBarHidden(true, animated: true)
-        navigationController?.isToolbarHidden = false
-        navigationController?.setToolbarHidden(true, animated: false)
+        hideNavAndToolbar(true)
         // Render view to an image
         UIGraphicsBeginImageContext(self.view.frame.size)
         view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
         let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
-        navigationController?.setNavigationBarHidden(false, animated: true)
-        navigationController?.isToolbarHidden = true
-        navigationController?.setToolbarHidden(false, animated: false)
+        hideNavAndToolbar(false)
 
         return memedImage
+    }
+    
+    func hideNavAndToolbar(_ hide: Bool){
+        navigationController?.setNavigationBarHidden(hide, animated: true)
+        navigationController?.isToolbarHidden = !hide
+        navigationController?.setToolbarHidden(hide, animated: false)
     }
     
     @IBAction func shareImage(_ sender:Any) {
