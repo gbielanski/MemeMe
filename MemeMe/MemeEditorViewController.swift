@@ -27,14 +27,16 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        configure(topTextField)
+        configure(bottomTextField)
         
-        topTextField.delegate = self
-        topTextField.defaultTextAttributes = memeTextAttributes
-        topTextField.textAlignment = .center
-        bottomTextField.delegate = self
-        bottomTextField.defaultTextAttributes = memeTextAttributes
-        bottomTextField.textAlignment = .center
         shareButton.isEnabled = false
+    }
+    
+    func configure(_ textField: UITextField) {
+        textField.delegate = self
+        textField.defaultTextAttributes = memeTextAttributes
+        textField.textAlignment = .center
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,18 +50,19 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         unsubscribeFromKeyboardNotifications()
     }
     
-    @IBAction func pickAnImageFromAlbym(_ sender:Any) {
+    func pickAnImage(from source: UIImagePickerController.SourceType) {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
-        imagePicker.sourceType = .photoLibrary
+        imagePicker.sourceType = source
         present(imagePicker, animated: true, completion: nil)
     }
     
+    @IBAction func pickAnImageFromAlbym(_ sender:Any) {
+        pickAnImage(from: .photoLibrary)
+    }
+    
     @IBAction func pickAnImageFromCamera(_ sender: Any) {
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = .camera
-        present(imagePicker, animated: true, completion: nil)
+        pickAnImage(from: .camera)
     }
     
     func imagePickerController(
@@ -82,7 +85,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         
-        return true;
+        return true
     }
     
     func subscribeToKeyboardNotifications() {
