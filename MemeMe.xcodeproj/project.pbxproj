@@ -14,6 +14,7 @@
 		E1063500251C7688007644E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E10634FF251C7688007644E8 /* Assets.xcassets */; };
 		E1063503251C7688007644E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1063501251C7688007644E8 /* LaunchScreen.storyboard */; };
 		E106350E251C7688007644E8 /* MemeMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E106350D251C7688007644E8 /* MemeMeTests.swift */; };
+		E14085C9252E0CEB00188A87 /* SentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14085C8252E0CEB00188A87 /* SentViewController.swift */; };
 		E180DF5A2526070400542955 /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180DF592526070400542955 /* Meme.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		E1063509251C7688007644E8 /* MemeMeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemeMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E106350D251C7688007644E8 /* MemeMeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeMeTests.swift; sourceTree = "<group>"; };
 		E106350F251C7688007644E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E14085C8252E0CEB00188A87 /* SentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentViewController.swift; sourceTree = "<group>"; };
 		E180DF592526070400542955 /* Meme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,6 +91,7 @@
 				E1063501251C7688007644E8 /* LaunchScreen.storyboard */,
 				E1063504251C7688007644E8 /* Info.plist */,
 				E180DF592526070400542955 /* Meme.swift */,
+				E14085C8252E0CEB00188A87 /* SentViewController.swift */,
 			);
 			path = MemeMe;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 			files = (
 				E10634FB251C7683007644E8 /* MemeEditorViewController.swift in Sources */,
 				E180DF5A2526070400542955 /* Meme.swift in Sources */,
+				E14085C9252E0CEB00188A87 /* SentViewController.swift in Sources */,
 				E10634F7251C7683007644E8 /* AppDelegate.swift in Sources */,
 				E10634F9251C7683007644E8 /* SceneDelegate.swift in Sources */,
 			);
