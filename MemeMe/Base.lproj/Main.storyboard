@@ -52,21 +52,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="SsD-4m-4KW">
-                            <size key="itemSize" width="128" height="128"/>
+                            <size key="itemSize" width="210" height="212"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MemeCollectionCell" id="aXU-Jm-qmg" customClass="MemeCollectionCell" customModule="MemeMe" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                <rect key="frame" x="102" y="0.0" width="210" height="212"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="VU7-KX-fD3" customClass="MemeCollectionCell" customModule="MemeMe" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="VU7-KX-fD3">
+                                    <rect key="frame" x="0.0" y="0.0" width="210" height="212"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ful-jn-ObV">
-                                            <rect key="frame" x="32" y="32" width="64" height="64"/>
+                                            <rect key="frame" x="73" y="74" width="64" height="64"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="64" id="Wi9-Ja-TV0"/>
                                                 <constraint firstAttribute="height" constant="64" id="pak-CX-ycN"/>
@@ -78,6 +78,7 @@
                                         <constraint firstItem="Ful-jn-ObV" firstAttribute="centerY" secondItem="VU7-KX-fD3" secondAttribute="centerY" id="Rs2-7R-Zm0"/>
                                     </constraints>
                                 </collectionViewCellContentView>
+                                <size key="customSize" width="210" height="212"/>
                                 <connections>
                                     <outlet property="memedImageView" destination="Ful-jn-ObV" id="O9y-Ob-csQ"/>
                                 </connections>
@@ -101,7 +102,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vrY-T7-wSO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="216" y="-579"/>
+            <point key="canvasLocation" x="215.94202898550725" y="-579.24107142857144"/>
         </scene>
         <!--Sent Memes-->
         <scene sceneID="Lnc-fK-got">
@@ -137,6 +138,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kys-Ux-xHM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="288" y="104"/>
+        </scene>
+        <!--Meme Details View Controller-->
+        <scene sceneID="0dr-6P-Xlh">
+            <objects>
+                <viewController storyboardIdentifier="MemeDetailsViewController" id="74Z-EL-e7z" customClass="MemeDetailsViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Qg9-U6-C5M">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dHx-IC-sBS">
+                                <rect key="frame" x="0.0" y="348" width="414" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="XYg-Uo-XmM"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="dHx-IC-sBS" firstAttribute="centerY" secondItem="Qg9-U6-C5M" secondAttribute="centerY" id="bq4-Dy-3hJ"/>
+                            <constraint firstItem="dHx-IC-sBS" firstAttribute="leading" secondItem="rfi-7K-TfR" secondAttribute="leading" id="vy8-Vq-GWM"/>
+                            <constraint firstItem="rfi-7K-TfR" firstAttribute="trailing" secondItem="dHx-IC-sBS" secondAttribute="trailing" id="w8j-c0-cVg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="rfi-7K-TfR"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="dHx-IC-sBS" id="6UZ-w8-De8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MSW-n0-XLx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1206" y="429"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pS9-5Q-Xa5">
