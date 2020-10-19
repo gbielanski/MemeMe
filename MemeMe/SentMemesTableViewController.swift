@@ -13,6 +13,8 @@ class SentMemesTableViewController: UITableViewController {
     // MARK: Properties
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
+    // MARK: Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
@@ -21,8 +23,14 @@ class SentMemesTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
-        //self.tabBarController?.tabBar.isHidden = false
+        self.tabBarController?.tabBar.isHidden = false
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
     
     // MARK: Table View Data Source
     

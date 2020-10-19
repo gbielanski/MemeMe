@@ -11,10 +11,17 @@ import UIKit
 private let reuseIdentifier = "Cell"
 
 class SentMemesCollectionViewController: UICollectionViewController {
+    
     // MARK: Properties
-    @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
+    
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
+    // MARK: Outlets
+    
+    @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
 
+    // MARK: Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,7 +36,12 @@ class SentMemesCollectionViewController: UICollectionViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         collectionView.reloadData()
-        //self.tabBarController?.tabBar.isHidden = false
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.tabBarController?.tabBar.isHidden = true
     }
 
     // MARK: UICollectionViewDataSource
