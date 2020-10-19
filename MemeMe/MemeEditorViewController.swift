@@ -15,6 +15,8 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var shareButton: UIBarButtonItem!
+    @IBOutlet weak var memeToolBar: UIToolbar!
+    @IBOutlet weak var memeNavBar: UINavigationBar!
     
     let memeTextAttributes: [NSAttributedString.Key: Any] = [
         NSAttributedString.Key.strokeColor: UIColor.black,
@@ -141,9 +143,8 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     func hideNavAndToolbar(_ hide: Bool){
-        navigationController?.setNavigationBarHidden(hide, animated: true)
-        navigationController?.isToolbarHidden = !hide
-        navigationController?.setToolbarHidden(hide, animated: false)
+        memeToolBar.isHidden = hide
+        memeNavBar.isHidden = hide
     }
     
     @IBAction func shareImage(_ sender:Any) {

@@ -281,6 +281,8 @@
                         <outlet property="bottomTextField" destination="l77-4C-Vkn" id="ka9-YB-i4K"/>
                         <outlet property="cameraButton" destination="zLZ-nj-u1q" id="YGQ-1d-qad"/>
                         <outlet property="imageView" destination="8f9-gf-hcT" id="5Cn-KK-aQi"/>
+                        <outlet property="memeNavBar" destination="QGu-Gh-n88" id="ibO-cL-5OQ"/>
+                        <outlet property="memeToolBar" destination="Les-Ia-XyG" id="mQx-vL-e4d"/>
                         <outlet property="shareButton" destination="g8u-Ue-Jfe" id="K9C-Cw-6Ee"/>
                         <outlet property="topTextField" destination="D21-Ti-YjZ" id="PxN-hW-htB"/>
                     </connections>
