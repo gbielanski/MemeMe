@@ -49,4 +49,8 @@ class SentMemesTableViewController: UITableViewController {
         detailController.meme = self.appDelegate.memes[(indexPath as NSIndexPath).row]
         self.navigationController!.pushViewController(detailController, animated: true)
     }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 128
+    }
 }

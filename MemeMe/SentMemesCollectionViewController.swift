@@ -56,5 +56,4 @@ class SentMemesCollectionViewController: UICollectionViewController {
         detailController.meme = self.appDelegate.memes[(indexPath as NSIndexPath).row]
         self.navigationController!.pushViewController(detailController, animated: true)
     }
-
 }
