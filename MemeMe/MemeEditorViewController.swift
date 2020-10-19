@@ -158,6 +158,12 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         }
         present(activityController, animated: true)
     }
+    
+    @IBAction func cancel(_ sender:Any) {
+        if let navController = self.navigationController {
+          navController.popViewController(animated: true)
+        }
+    }
 
 }
 
